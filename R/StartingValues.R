@@ -247,7 +247,8 @@ UniGAS_Starting <- function(vY, iT, iK, Dist, ScalingType, GASPar, fn.optimizer)
 
 starting_vA_Uni <- function(vY, vUncValues, mB, dA_foo, iT, iK, Dist, ScalingType, GASPar) {
 
-  seq_alpha = c(seq(1e-04, 5.5, length.out = 30L))
+  seq_alpha = seq(1e-04, 5.5, length.out = 30L)
+  seq_alpha = unique(c(seq(seq_alpha[1], seq_alpha[2], length.out = 7L), seq_alpha))
 
   vKappa = (diag(iK) - mB) %*% vUncValues
 
